@@ -1,11 +1,6 @@
-#android基础部分
+# android基础部分
 
-
-[TOC]
-
-
-
-##Intent Service
+## Intent Service
 有两个优点。
 
 1. 不用new线程。
@@ -16,7 +11,7 @@ IntentService是Service的子类，是一个异步的，会自动停止的Servic
 ```
 
 
-##Context区别
+## Context区别
 * Activity和Service一级Application的Context是不一样的，Activity集成自ContenxtThemeWraper。其他的继承自ContextWarpper。
 * 每一个Activity和Service以及Application的Context的Context都是一个新的ContextImpl对象
 * getApplication()是用来获取Application势力的，但是这个方法只有在Activity的Service中才能调用的到。那么也许在绝大多数情况下。我们都是在Activity或Service中使用Application的。但是如果在一些其他的场景。比如BoardCastReceiver中也想获取Application的实习，这是就可以借助getApplicationContext方法，getApplicationContext比getApplication()方法的作用域会更广一些，任何一个Context实例，只要调用getApplicationContext()都可以拿到我们的Application对象。
@@ -25,7 +20,7 @@ IntentService是Service的子类，是一个异步的，会自动停止的Servic
 * 尽管Application、Activity、Service都有自己的ContextImpl，并且每个ContextImpl都有自己的mResource对成员，但是由于他们的mResources成员都来自于唯一的ResouceManager但势力，所以他们看似不同的mResource其实都指向的是同一个快内存。
 * Context的的数量等于Activity的个数和Service的个数+1，这个1为Application
 
-##AR和Dalvik的区别
+## AR和Dalvik的区别
 Art上医用启动快，运行快，但是耗费更多存储空间，安装时间长，总的来说ART就是一种“空间换时间的方式”
 
 ART:Ahead of TIme Dalvik:Just in Time
@@ -45,4 +40,3 @@ ARG的缺点：
 
 1. 更大的存储张勇空间，可能会增长10%-20%
 2. 更长的安装时间
-3. 
